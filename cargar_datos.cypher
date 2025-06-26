@@ -1,3 +1,25 @@
+//archivos csv
+//movies.csv
+movieId,title,year
+1,The Matrix,1999
+2,John Wick,2014
+3,Speed,1994
+
+//actors.csv
+actorId,name
+10,Keanu Reeves
+11,Laurence Fishburne
+12,Carrie-Anne Moss
+
+//acted_in.csv
+actorId,movieId
+10,1
+10,2
+10,3
+11,1
+12,1
+
+
 //cargar movies
 LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/CarlosJezeh777/Neo4jEjercicio/refs/heads/main/archivos/movies.csv' as row 
 CREATE (:Movie {id: tointeger(row.movieId), title: row.title, year: toInteger(row.year)})
